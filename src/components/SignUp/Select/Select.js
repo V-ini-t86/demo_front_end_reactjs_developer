@@ -1,10 +1,9 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React, { useState } from "react";
 
-function SelectForm({ name, width, data }) {
-  const [age, setAge] = useState("");
+function SelectForm({ name, width, data, setDob, dob }) {
   const handleChange = (e) => {
-    setAge(e.target.value);
+    setDob(e.target.value);
   };
 
   return (
@@ -17,7 +16,7 @@ function SelectForm({ name, width, data }) {
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"
-        value={age}
+        value={dob}
         label={name}
         onChange={handleChange}
       >

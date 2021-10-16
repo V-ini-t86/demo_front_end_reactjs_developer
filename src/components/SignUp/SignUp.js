@@ -1,9 +1,25 @@
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, FormControlLabel, Checkbox } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import { styled } from "@mui/material/styles";
+import React, { useState } from "react";
 import SelectForm from "./Select/Select";
 import classes from "./SignUp.module.css";
 
+const CustomButton = styled(Button)`
+  padding: "10px";
+  border: "none";
+  background: "#1d9bf0";
+  margin-top: "30px";
+  cursor: "pointer";
+  color: "white";
+  font-size: "1rem";
+  font-weight: "bolder";
+  border-radius: "50px";
+
+  :hover {
+    background: #168ad8;
+  }
+`;
 const months = [
   "January",
   "Februaru",
@@ -30,6 +46,50 @@ const years = [
 ];
 
 function SignUp() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [month, setMonth] = useState("");
+  const [day, setDay] = useState("");
+  const [year, setYear] = useState("");
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+
+  const nextHandler = () => {
+    if (
+      name.length === 0 ||
+      !email.includes("@") ||
+      month.length === 0 ||
+      day === "" ||
+      year === ""
+    ) {
+      return;
+    } else {
+      console.log(name, email, month, day, year);
+    }
+  };
+
+  const step2 = (
+    <div>
+      <h3>Customize your experience</h3>
+      <h4>Track where you see Twitter content across the web</h4>
+      <p>
+        Twitter uses this data to personalize your experience. This web browsing
+        history will never be stored with your name, email, or phone number.
+      </p>
+      <p className="lt-grey">
+        For more details about these settings, visit the Help Center.
+      </p>
+      <FormControlLabel
+        value="start"
+        control={<Checkbox />}
+        label="Start"
+        labelPlacement="start"
+      />
+    </div>
+  );
+
   return (
     <Box
       sx={{
@@ -38,10 +98,28 @@ function SignUp() {
       }}
     >
       <div className={classes.signup}>
-        <form>
+        <img className={classes.twitter} src="images/twitter.png" alt="twi" />
+
+        <form onSubmit={submitHandler}>
           <h1>Create your account</h1>
-          <TextField type="text" label="Name" className={classes.input} />
-          <TextField type="email" label="Email" className={classes.input} />
+          <TextField
+            type="text"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+            value={name}
+            label="Name"
+            sx={{ marginTop: "20px" }}
+          />
+          <TextField
+            type="email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            value={email}
+            label="Email"
+            sx={{ marginTop: "20px" }}
+          />
 
           <h3 className="mt-3">Date of Birth</h3>
           <p className="lt-grey">
@@ -49,11 +127,42 @@ function SignUp() {
             account is for a business, a pet, or something else.
           </p>
           <div className={classes.dob}>
-            <SelectForm name="Month" width="46%" data={months} />
-            <SelectForm name="Day" width="20%" data={days} />
-            <SelectForm name="Year" width="30%" data={years} />
+            <SelectForm
+              name="Month"
+              width="46%"
+              data={months}
+              setDob={setMonth}
+              dob={month}
+            />
+            <SelectForm
+              name="Day"
+              width="20%"
+              data={days}
+              setDob={setDay}
+              dob={day}
+            />
+            <SelectForm
+              name="Year"
+              width="30%"
+              data={years}
+              setDob={setYear}
+              dob={year}
+            />
           </div>
-          <button className={classes.nextBtn}>Next</button>
+
+          <CustomButton
+            sx={{
+              fontSize: "1rem",
+              fontWeight: "bolder",
+              color: "white",
+              borderRadius: "50px",
+              background: "#1d9bf0",
+              marginTop: "20px",
+            }}
+            onClick={nextHandler}
+          >
+            Next
+          </CustomButton>
         </form>
       </div>
     </Box>
