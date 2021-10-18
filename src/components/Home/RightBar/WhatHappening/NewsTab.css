@@ -1,0 +1,22 @@
+.news-heading > h6 {
+  font-weight: 500;
+  color: #788690;
+  font-size: 0.8rem;
+}
+.news-heading > h3 {
+}
+.news-coll {
+  display: flex;
+  padding: 10px 20px;
+}
+.news-coll > img {
+  border-radius: 10px;
+}
+.news-coll:hover {
+  background: rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+}
+.news-hashtag > h4 {
+  font-weight: 500;
+  color: #788690;
+}

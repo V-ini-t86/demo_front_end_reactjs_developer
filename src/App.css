@@ -7,3 +7,8 @@
 .lt-grey {
   color: #546371;
 }
+button {
+  background: none;
+  padding: 10px;
+  border: none;
+}

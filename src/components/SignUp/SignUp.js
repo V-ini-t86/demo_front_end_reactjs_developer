@@ -48,12 +48,24 @@ const years = [
 function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
   const [year, setYear] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
+    if (
+      name.length === 0 ||
+      !email.includes("@") ||
+      month.length === 0 ||
+      day === "" ||
+      year === ""
+    ) {
+      return;
+    } else {
+      console.log(name, email, month, day, year);
+    }
   };
 
   const nextHandler = () => {
@@ -84,7 +96,7 @@ function SignUp() {
       <FormControlLabel
         value="start"
         control={<Checkbox />}
-        label="Start"
+        label="Twitter uses this data to personalize your experience. This web browsing history will never be stored with your name, email, or phone number."
         labelPlacement="start"
       />
     </div>
@@ -118,6 +130,15 @@ function SignUp() {
             }}
             value={email}
             label="Email"
+            sx={{ marginTop: "20px" }}
+          />
+          <TextField
+            type="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            value={password}
+            label="Password"
             sx={{ marginTop: "20px" }}
           />
 
@@ -159,9 +180,9 @@ function SignUp() {
               background: "#1d9bf0",
               marginTop: "20px",
             }}
-            onClick={nextHandler}
+            type="submit"
           >
-            Next
+            Sign Up
           </CustomButton>
         </form>
       </div>

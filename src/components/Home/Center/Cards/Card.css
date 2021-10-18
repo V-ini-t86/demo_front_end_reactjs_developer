@@ -1,0 +1,48 @@
+.icon-num {
+  display: flex;
+  align-items: center;
+}
+.header {
+  margin-left: 40px;
+}
+.card > .header > .icons {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+.card {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px lightgrey solid;
+  border-right: 1px lightgrey solid;
+}
+.card:hover {
+  background: #e1eaf0;
+  transition: ease 0.6s;
+  cursor: pointer;
+}
+.header__name > span {
+  font-weight: 400;
+  color: #788690;
+}
+
+.profile-img > img {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+}
+.profile-img > img:hover {
+  background: #bdc4c8;
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
+}
+.header__img > img {
+  text-align: center;
+  border-radius: 10px;
+  margin: 10px;
+}
+.header__img {
+  display: flex;
+  justify-content: center;
+}

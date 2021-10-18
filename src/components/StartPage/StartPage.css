@@ -1,0 +1,60 @@
+.signup-btn {
+  border: 1px solid black;
+}
+.start-page {
+  display: flex;
+  /* flex-wrap: wrap-reverse; */
+}
+.start-img {
+  width: 56%;
+  height: 100vh;
+}
+@media (max-width: 1120px) {
+  .start-img {
+    width: 100%;
+  }
+  .start-page {
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+}
+
+.half {
+  padding: 40px;
+}
+.half > img {
+  width: 30px;
+}
+.half > h1 {
+  font-size: 4rem;
+}
+.half > h2 {
+  font-size: 3rem;
+  margin-top: 20px;
+}
+.half > .signup-btns > button {
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid lightgrey;
+  margin-top: 20px;
+  width: 250px;
+}
+.half > .signup-btns > button:hover {
+  background: rgb(230, 230, 230);
+}
+.half > p {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+.half > p > a {
+  color: #1d9bf0;
+  text-decoration: none;
+}
+.half > p > a:hover {
+  text-decoration: underline;
+}
+.signup-btns {
+  display: flex;
+  flex-direction: column;
+}

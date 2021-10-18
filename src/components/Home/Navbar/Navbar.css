@@ -1,0 +1,25 @@
+nav {
+  /* position: fixed; */
+  display: grid;
+  grid-template-columns: 2fr 50px;
+  /* padding: 10px; */
+  width: 100%;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px lightgrey solid;
+  border-right: 1px lightgrey solid;
+  background: white;
+  /* margin-top: 10px;
+  margin-bottom: 10px; */
+}
+nav > h3 {
+  padding-left: 15px;
+}
+nav > img {
+  width: 30px;
+  height: 30px;
+}
+.top-tweets {
+  padding: 0;
+}
