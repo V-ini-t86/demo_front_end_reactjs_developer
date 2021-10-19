@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./StartPage.css";
 import { styled, Box } from "@mui/system";
 import ModalUnstyled from "@mui/core/ModalUnstyled";
@@ -42,6 +42,7 @@ function StartPage() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const history = useHistory();
   return (
     <div className="start-page">
       <StyledModal
@@ -66,6 +67,14 @@ function StartPage() {
           <button className="signup-btn">Sign up with Apple</button>
           <button type="button" onClick={handleOpen} className="signup-btn">
             Sign up with Email
+          </button>
+          <button
+            className="signup-btn"
+            onClick={() => {
+              history.push("/home");
+            }}
+          >
+            Skip Sign in
           </button>
         </div>
         <p className="lt-grey">
