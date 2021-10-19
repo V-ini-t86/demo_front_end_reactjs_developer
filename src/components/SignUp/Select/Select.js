@@ -19,6 +19,7 @@ function SelectForm({ name, width, data, setDob, dob }) {
         value={dob}
         label={name}
         onChange={handleChange}
+        required
       >
         {data.map((val, i) => {
           return (

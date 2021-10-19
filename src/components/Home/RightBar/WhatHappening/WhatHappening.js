@@ -1,8 +1,10 @@
 import { Button } from "@mui/material";
 import React from "react";
+import { useHistory } from "react-router";
 import NewsTab from "./NewsTab";
 import "./WhatHappening.css";
 function WhatHappening() {
+  const history = useHistory();
   return (
     <div className="what-happening">
       <h3>What's Happening</h3>
@@ -22,7 +24,14 @@ function WhatHappening() {
         nTweets="10k tweets"
       />
       <NewsTab trending="Trending . Music" vTag="SUGA" nTweets="15k tweets" />
-      <Button className="show-more">Show More</Button>
+      <Button
+        className="show-more"
+        onClick={() => {
+          history.push("/explore");
+        }}
+      >
+        Show More
+      </Button>
     </div>
   );
 }

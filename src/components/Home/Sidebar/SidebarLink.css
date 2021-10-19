@@ -10,10 +10,15 @@
   transition: color 100ms ease-out;
 }
 .link > h2 {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 20px;
   margin-right: 20px;
 }
 .link > .MuiSvgIcon-root {
-  padding: 20px;
+  padding: 15px;
 }
+/* .side-link {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+} */

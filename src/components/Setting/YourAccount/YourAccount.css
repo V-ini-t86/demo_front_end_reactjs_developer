@@ -1,0 +1,8 @@
+.your-account {
+  margin: 0;
+  padding: 0;
+}
+.your-account > h3 {
+  border-bottom: 1px solid lightgrey;
+  padding: 0px 10px 0px 10px;
+}

@@ -1,0 +1,29 @@
+.cross-btn {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+  justify-content: space-between;
+}
+.cross-btn > h3 {
+  margin-left: 20px;
+}
+.text-fields {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  flex-direction: column;
+  width: 92%;
+}
+.text-fields > .MuiTextField-root {
+  margin-bottom: 15px;
+}
+
+.profile-save-btn {
+  cursor: pointer;
+  background: black;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  justify-self: center;
+  margin-right: 10px;
+}

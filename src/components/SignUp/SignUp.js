@@ -4,6 +4,8 @@ import { styled } from "@mui/material/styles";
 import React, { useState } from "react";
 import SelectForm from "./Select/Select";
 import classes from "./SignUp.module.css";
+import { useStateValue } from "../../StateProvider";
+import { useHistory } from "react-router";
 
 const CustomButton = styled(Button)`
   padding: "10px";
@@ -52,34 +54,18 @@ function SignUp() {
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
   const [year, setYear] = useState("");
-
+  let value = useStateValue();
+  const history = useHistory();
   const submitHandler = (e) => {
     e.preventDefault();
-    if (
-      name.length === 0 ||
-      !email.includes("@") ||
-      month.length === 0 ||
-      day === "" ||
-      year === ""
-    ) {
-      return;
-    } else {
-      console.log(name, email, month, day, year);
-    }
-  };
-
-  const nextHandler = () => {
-    if (
-      name.length === 0 ||
-      !email.includes("@") ||
-      month.length === 0 ||
-      day === "" ||
-      year === ""
-    ) {
-      return;
-    } else {
-      console.log(name, email, month, day, year);
-    }
+    value.name = name;
+    value.email = email;
+    value.password = password;
+    value.month = month;
+    value.year = year;
+    value.day = day;
+    value = { ...value };
+    history.push("/home");
   };
 
   const step2 = (
@@ -122,6 +108,7 @@ function SignUp() {
             value={name}
             label="Name"
             sx={{ marginTop: "20px" }}
+            required
           />
           <TextField
             type="email"
@@ -131,6 +118,7 @@ function SignUp() {
             value={email}
             label="Email"
             sx={{ marginTop: "20px" }}
+            required
           />
           <TextField
             type="password"
@@ -140,6 +128,7 @@ function SignUp() {
             value={password}
             label="Password"
             sx={{ marginTop: "20px" }}
+            required
           />
 
           <h3 className="mt-3">Date of Birth</h3>

@@ -30,6 +30,7 @@ function TweetForm() {
             fontSize: "1.2rem",
             fontWeight: "200",
             padding: "5px",
+            resize: "none",
           }}
           ref={tweetRef}
         />

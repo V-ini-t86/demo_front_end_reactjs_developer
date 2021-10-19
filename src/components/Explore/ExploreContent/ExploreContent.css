@@ -1,0 +1,29 @@
+.search-bar-setting {
+  display: flex;
+  padding: 10px 10px 0px 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid lightgrey;
+}
+.search-bar {
+  width: 100%;
+  margin-right: 10px;
+}
+
+.exp-link {
+  text-decoration: none;
+  color: #6d7e88;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+.exp-link:hover {
+  background: rgba(15, 20, 25, 0.1);
+}
+.exp-link-click {
+  color: black;
+}
+.exp-h > h1 {
+  text-align: center;
+}

@@ -5,7 +5,6 @@ import Card from "./Cards/Card";
 import "./Center.css";
 import data from "../../../tweet-data.json";
 function Center() {
-  console.log(data);
   return (
     <div className="center">
       <Navbar />

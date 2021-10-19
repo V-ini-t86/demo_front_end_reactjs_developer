@@ -1,11 +1,22 @@
 import React, { useContext, createContext } from "react";
 
-const Context = createContext();
+const StateContext = createContext();
 
 function StateProvider({ children }) {
-  let value = {};
-  return <Context.Provider value={value}>{children}</Context.Provider>;
+  let value = {
+    name: "",
+    email: "",
+    password: "",
+    day: null,
+    month: "",
+    year: null,
+    bio: "",
+    website: "",
+  };
+  return (
+    <StateContext.Provider value={value}>{children}</StateContext.Provider>
+  );
 }
 
 export default StateProvider;
-export const useStateValue = () => useContext(StateProvider);
+export const useStateValue = () => useContext(StateContext);

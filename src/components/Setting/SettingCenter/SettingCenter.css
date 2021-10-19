@@ -1,0 +1,11 @@
+.setting-center {
+  width: 32%;
+  border-right: 1px solid #c8d2db;
+  margin-left: 23%;
+  margin-right: 22%;
+  height: 100vh;
+}
+.setting-center > h2 {
+  border-bottom: 1px solid lightgrey;
+  padding: 1px;
+}
